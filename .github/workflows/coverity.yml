@@ -1,4 +1,8 @@
 # Creates and uploads a Coverity build on a schedule
+# Requires that two secrets be created:
+# COVERITY_SCAN_EMAIL, with the email address that should be notified with scan results
+# COVERITY_SCAN_TOKEN, with the token from the Coverity project page (e.g., https://scan.coverity.com/projects/moshekaplan-duckdb?tab=project_settings )
+# Also, update the 'github.repository' and 'COVERITY_PROJECT_NAME' values below to proper values
 name: Coverity Scan
 on:
   schedule:
