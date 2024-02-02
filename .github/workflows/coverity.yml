@@ -34,7 +34,7 @@ jobs:
     - name: Install Python dependencies
       run: python3 -m pip install tools/pythonpkg --use-pep517 --user
     - name: Build with cov-build
-      run: BUILD_PYTHON=1 BUILD_JDBC=1 BUILD_ODBC=1 BUILD_AUTOCOMPLETE=1 BUILD_ICU=1 BUILD_TPCDS=1 BUILD_TCPE=1 BUILT_FTS=1 BUILD_HTTPFS=1 BUILD_JSON=1 BUILD_INET=1 BUILD_SQLSMITH=1  cov-analysis-linux64/bin/cov-build --dir cov-int make
+      run: BUILD_PYTHON=1 BUILD_JDBC=1 BUILD_ODBC=1 BUILD_AUTOCOMPLETE=1 BUILD_ICU=1 BUILD_TPCDS=1 BUILD_TCPE=1 BUILT_FTS=1 BUILD_HTTPFS=1 BUILD_JSON=1 BUILD_INET=1 BUILD_SQLSMITH=1 sudo cov-analysis-linux64/bin/cov-build --dir cov-int make
     - name: Upload the result
       run: |
           tar czvf cov-int.tgz cov-int
